@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  
+  <test thread-count="5" name="ClassATest">
+  <groups>
+   <define name="SmokeandSanity"><!-- Meta Grouping  -->
+    <include name="smoke"/>
+    <include name="sanity"/>
+   </define>
+   <run>
+      <include name="SmokeandSanity"/>
+   </run>
+  </groups>
+    <classes>
+      <class name="DemoPackageGroup1.ClassA"/>
+      <class name="DemoPackageGroup2.ClassA"/>
+    </classes>
+  </test> 
+  
+  <test thread-count="5" name="ClassBTest">
+  <groups>
+   <run>
+      <include name="sanity"/>
+   </run>
+  </groups>
+    <classes>
+      <class name="DemoPackageGroup1.ClassB"/>
+      <class name="DemoPackageGroup2.ClassB"/>
+    </classes>
+  </test> 
+  
+  <test thread-count="5" name="ClassCTest">
+  <groups>
+   <run>
+      <include name="sanity"/>
+   </run>
+  </groups>
+    <classes>
+      <class name="DemoPackageGroup1.ClassC"/>
+      <class name="DemoPackageGroup2.ClassC"/>
+    </classes>
+  </test> 
+</suite> 
